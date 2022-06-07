@@ -9,7 +9,7 @@ import io.fabric8.kubernetes.model.annotation.Group;
 import io.fabric8.kubernetes.model.annotation.ShortNames;
 import io.fabric8.kubernetes.model.annotation.Version;
 
-@Group("tomcatoperator.io")
+@Group("bottegaio.com")
 @Version("v1")
 @ShortNames("web")
 public class Webapp extends CustomResource<WebappSpec, WebappStatus> implements Namespaced {

@@ -8,5 +8,5 @@ RUN ./gradlew clean shadowJar
 FROM ubuntu:20.04
 RUN apt update && DEBIAN_FRONTEND=noninteractive apt install -y openjdk-11-jre bash gawk sed grep bc coreutils wget binutils && apt-get clean && rm -rf /var/lib/apt/lists/*
 ENTRYPOINT ["java"]
-CMD ["-XX:+UnlockExperimentalVMOptions","-Djava.net.preferIPv4Stack=true","-XX:+UseCGroupMemoryLimitForHeap","-XshowSettings:vm","-Djava.security.egd=file:/dev/./urandom","-jar","/agent.jar"]
+CMD ["-XX:+UnlockExperimentalVMOptions","-Djava.net.preferIPv4Stack=true","-XshowSettings:vm","-Djava.security.egd=file:/dev/./urandom","-jar","/agent.jar"]
 COPY --from=ar4k-builder /ar4kAgent/build/libs/*-all.jar /agent.jar

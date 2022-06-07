@@ -29,7 +29,7 @@ group = 'net.rossonet'
 version = '0.1'
 
 ext {
-  sourceCompatibility = JavaVersion.VERSION_11
+//  sourceCompatibility = JavaVersion.VERSION_11
   ar4kVersion = '0.9.1014'
   debianName = "${project.name}"
   packageName = "${project.name}"
@@ -43,6 +43,8 @@ repositories {
 
 dependencies {
   implementation group: 'io.javaoperatorsdk', name: 'operator-framework', version: '3.0.2'
+  annotationProcessor "io.javaoperatorsdk:operator-framework:3.0.2"
+  annotationProcessor 'io.fabric8:crd-generator-apt:5.12.2'
   implementation 'org.takes:takes:1.20'
   // testing
   testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
