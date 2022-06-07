@@ -3,7 +3,7 @@ name: Build and publish docker image to GitHub Registry
 on:
   push:
     branches:
-    - master
+    - main
 
 jobs:
   build:

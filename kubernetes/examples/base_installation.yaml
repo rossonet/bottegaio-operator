@@ -3,6 +3,13 @@ kind: Backend
 metadata:
   name: backend
 spec:
-  tomcat: test-tomcat1
-  url: http://tomcat.apache.org/tomcat-7.0-doc/appdev/sample/sample.war
-  contextPath: mysample
+  version: 2
+  replicas: 4
+---
+apiVersion: "bottegaio.com/v1"
+kind: Webapp
+metadata:
+  name: webapp
+spec:
+  version: 3
+  replicas: 6
