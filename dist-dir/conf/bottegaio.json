@@ -1,0 +1,7 @@
+{
+  "registration-provider":"cerbero.bottegaio.net,caronte.rossonet.net",
+  "registration-group":"generic",
+  "serial-name":"<!mac-address!>",
+  "registration-secret":null,
+  "data-directory":"/var/rossonet/bottegaio"
+}

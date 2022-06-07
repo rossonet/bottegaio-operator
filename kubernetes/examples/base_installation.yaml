@@ -1,0 +1,8 @@
+apiVersion: "bottegaio.com/v1"
+kind: Backend
+metadata:
+  name: backend
+spec:
+  tomcat: test-tomcat1
+  url: http://tomcat.apache.org/tomcat-7.0-doc/appdev/sample/sample.war
+  contextPath: mysample

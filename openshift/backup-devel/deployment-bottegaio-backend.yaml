@@ -1,0 +1,199 @@
+﻿kind: Deployment
+apiVersion: apps/v1
+metadata:
+  annotations:
+    alpha.image.policy.openshift.io/resolve-names: '*'
+    app.openshift.io/vcs-ref: master
+    app.openshift.io/vcs-uri: 'git@github.com:rossonet/bottegaio.git'
+    deployment.kubernetes.io/revision: '34'
+    image.openshift.io/triggers: >-
+      [{"from":{"kind":"ImageStreamTag","name":"bottegaio-backend:latest","namespace":"agenti-bottegaio-net-dev"},"fieldPath":"spec.template.spec.containers[?(@.name==\"bottegaio-backend\")].image","pause":"false"}]
+    openshift.io/generated-by: OpenShiftWebConsole
+  selfLink: >-
+    /apis/apps/v1/namespaces/agenti-bottegaio-net-dev/deployments/bottegaio-backend
+  resourceVersion: '1653259'
+  name: bottegaio-backend
+  uid: 7044971e-ba3a-439c-9b46-8c3f7d08ba83
+  creationTimestamp: '2022-01-31T12:02:42Z'
+  generation: 34
+  managedFields:
+    - manager: Mozilla
+      operation: Update
+      apiVersion: apps/v1
+      time: '2022-01-31T12:02:42Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:annotations':
+            .: {}
+            'f:alpha.image.policy.openshift.io/resolve-names': {}
+            'f:app.openshift.io/vcs-ref': {}
+            'f:app.openshift.io/vcs-uri': {}
+            'f:image.openshift.io/triggers': {}
+            'f:openshift.io/generated-by': {}
+          'f:labels':
+            .: {}
+            'f:app': {}
+            'f:app.kubernetes.io/component': {}
+            'f:app.kubernetes.io/instance': {}
+            'f:app.kubernetes.io/name': {}
+            'f:app.kubernetes.io/part-of': {}
+            'f:app.openshift.io/runtime': {}
+            'f:app.openshift.io/runtime-version': {}
+        'f:spec':
+          'f:progressDeadlineSeconds': {}
+          'f:replicas': {}
+          'f:revisionHistoryLimit': {}
+          'f:selector': {}
+          'f:strategy':
+            'f:rollingUpdate':
+              .: {}
+              'f:maxSurge': {}
+              'f:maxUnavailable': {}
+            'f:type': {}
+          'f:template':
+            'f:metadata':
+              'f:labels':
+                .: {}
+                'f:app': {}
+                'f:deploymentconfig': {}
+            'f:spec':
+              'f:containers':
+                'k:{"name":"bottegaio-backend"}':
+                  .: {}
+                  'f:imagePullPolicy': {}
+                  'f:name': {}
+                  'f:ports':
+                    .: {}
+                    'k:{"containerPort":8080,"protocol":"TCP"}':
+                      .: {}
+                      'f:containerPort': {}
+                      'f:protocol': {}
+                    'k:{"containerPort":8443,"protocol":"TCP"}':
+                      .: {}
+                      'f:containerPort': {}
+                      'f:protocol': {}
+                    'k:{"containerPort":8778,"protocol":"TCP"}':
+                      .: {}
+                      'f:containerPort': {}
+                      'f:protocol': {}
+                  'f:resources': {}
+                  'f:terminationMessagePath': {}
+                  'f:terminationMessagePolicy': {}
+              'f:dnsPolicy': {}
+              'f:restartPolicy': {}
+              'f:schedulerName': {}
+              'f:securityContext': {}
+              'f:terminationGracePeriodSeconds': {}
+    - manager: openshift-controller-manager
+      operation: Update
+      apiVersion: apps/v1
+      time: '2022-01-31T12:06:32Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:spec':
+          'f:template':
+            'f:spec':
+              'f:containers':
+                'k:{"name":"bottegaio-backend"}':
+                  'f:image': {}
+    - manager: kube-controller-manager
+      operation: Update
+      apiVersion: apps/v1
+      time: '2022-01-31T20:21:57Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:annotations':
+            'f:deployment.kubernetes.io/revision': {}
+        'f:status':
+          'f:availableReplicas': {}
+          'f:conditions':
+            .: {}
+            'k:{"type":"Available"}':
+              .: {}
+              'f:lastTransitionTime': {}
+              'f:lastUpdateTime': {}
+              'f:message': {}
+              'f:reason': {}
+              'f:status': {}
+              'f:type': {}
+            'k:{"type":"Progressing"}':
+              .: {}
+              'f:lastTransitionTime': {}
+              'f:lastUpdateTime': {}
+              'f:message': {}
+              'f:reason': {}
+              'f:status': {}
+              'f:type': {}
+          'f:observedGeneration': {}
+          'f:readyReplicas': {}
+          'f:replicas': {}
+          'f:updatedReplicas': {}
+  namespace: agenti-bottegaio-net-dev
+  labels:
+    app: bottegaio-backend
+    app.kubernetes.io/component: bottegaio-backend
+    app.kubernetes.io/instance: bottegaio-backend
+    app.kubernetes.io/name: java
+    app.kubernetes.io/part-of: bottegaio
+    app.openshift.io/runtime: java
+    app.openshift.io/runtime-version: openjdk-8-ubi8
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bottegaio-backend
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: bottegaio-backend
+        deploymentconfig: bottegaio-backend
+    spec:
+      containers:
+        - name: bottegaio-backend
+          image: >-
+            image-registry.openshift-image-registry.svc:5000/agenti-bottegaio-net-dev/bottegaio-backend@sha256:96980ed2b8ab5c7f65005ed8aed30041ae9fe5c279bcfc4684bc3a4779cb11d4
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+            - containerPort: 8443
+              protocol: TCP
+            - containerPort: 8778
+              protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          imagePullPolicy: Always
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+      dnsPolicy: ClusterFirst
+      securityContext: {}
+      schedulerName: default-scheduler
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 25%
+      maxSurge: 25%
+  revisionHistoryLimit: 10
+  progressDeadlineSeconds: 600
+status:
+  observedGeneration: 34
+  replicas: 1
+  updatedReplicas: 1
+  readyReplicas: 1
+  availableReplicas: 1
+  conditions:
+    - type: Available
+      status: 'True'
+      lastUpdateTime: '2022-01-31T12:06:53Z'
+      lastTransitionTime: '2022-01-31T12:06:53Z'
+      reason: MinimumReplicasAvailable
+      message: Deployment has minimum availability.
+    - type: Progressing
+      status: 'True'
+      lastUpdateTime: '2022-01-31T20:21:59Z'
+      lastTransitionTime: '2022-01-31T12:02:42Z'
+      reason: NewReplicaSetAvailable
+      message: ReplicaSet "bottegaio-backend-6d6cd57778" has successfully progressed.

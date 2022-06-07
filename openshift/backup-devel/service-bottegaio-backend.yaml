@@ -1,0 +1,94 @@
+﻿kind: Service
+apiVersion: v1
+metadata:
+  annotations:
+    app.openshift.io/vcs-ref: master
+    app.openshift.io/vcs-uri: 'git@github.com:rossonet/bottegaio.git'
+    openshift.io/generated-by: OpenShiftWebConsole
+  selfLink: /api/v1/namespaces/agenti-bottegaio-net-dev/services/bottegaio-backend
+  resourceVersion: '1503383'
+  name: bottegaio-backend
+  uid: c3353c06-d6e7-4482-98c4-8717073e747e
+  creationTimestamp: '2022-01-31T12:02:42Z'
+  managedFields:
+    - manager: Mozilla
+      operation: Update
+      apiVersion: v1
+      time: '2022-01-31T12:02:42Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:annotations':
+            .: {}
+            'f:app.openshift.io/vcs-ref': {}
+            'f:app.openshift.io/vcs-uri': {}
+            'f:openshift.io/generated-by': {}
+          'f:labels':
+            .: {}
+            'f:app': {}
+            'f:app.kubernetes.io/component': {}
+            'f:app.kubernetes.io/instance': {}
+            'f:app.kubernetes.io/name': {}
+            'f:app.kubernetes.io/part-of': {}
+            'f:app.openshift.io/runtime': {}
+            'f:app.openshift.io/runtime-version': {}
+        'f:spec':
+          'f:ports':
+            .: {}
+            'k:{"port":8080,"protocol":"TCP"}':
+              .: {}
+              'f:name': {}
+              'f:port': {}
+              'f:protocol': {}
+              'f:targetPort': {}
+            'k:{"port":8443,"protocol":"TCP"}':
+              .: {}
+              'f:name': {}
+              'f:port': {}
+              'f:protocol': {}
+              'f:targetPort': {}
+            'k:{"port":8778,"protocol":"TCP"}':
+              .: {}
+              'f:name': {}
+              'f:port': {}
+              'f:protocol': {}
+              'f:targetPort': {}
+          'f:selector':
+            .: {}
+            'f:app': {}
+            'f:deploymentconfig': {}
+          'f:sessionAffinity': {}
+          'f:type': {}
+  namespace: agenti-bottegaio-net-dev
+  labels:
+    app: bottegaio-backend
+    app.kubernetes.io/component: bottegaio-backend
+    app.kubernetes.io/instance: bottegaio-backend
+    app.kubernetes.io/name: java
+    app.kubernetes.io/part-of: bottegaio
+    app.openshift.io/runtime: java
+    app.openshift.io/runtime-version: openjdk-8-ubi8
+spec:
+  ports:
+    - name: 8080-tcp
+      protocol: TCP
+      port: 8080
+      targetPort: 8080
+    - name: 8443-tcp
+      protocol: TCP
+      port: 8443
+      targetPort: 8443
+    - name: 8778-tcp
+      protocol: TCP
+      port: 8778
+      targetPort: 8778
+  selector:
+    app: bottegaio-backend
+    deploymentconfig: bottegaio-backend
+  clusterIP: 172.30.147.101
+  clusterIPs:
+    - 172.30.147.101
+  type: ClusterIP
+  sessionAffinity: None
+status:
+  loadBalancer: {}
