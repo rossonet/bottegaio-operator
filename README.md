@@ -12,10 +12,6 @@ Si tratta di un operator Kubernetes per la gestione del backend (con funzione au
 
 ![alt text](https://raw.githubusercontent.com/rossonet/bottegaio-operator/master/artwork/rudder.png "Bottegaio Operator logo")
 
-## Artefatto su Maven
-
-[https://mvnrepository.com/artifact/net.rossonet/bottegaio-operator](https://mvnrepository.com/artifact/net.rossonet/bottegaio-operator)
-
 ## Rossonet
 
 ![alt text](https://app.rossonet.net/wp-content/uploads/2021/10/rossonet-logo_280_115.png "Rossonet")
