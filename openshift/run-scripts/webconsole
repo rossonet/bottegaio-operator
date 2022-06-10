@@ -1,2 +1,0 @@
-#!/bin/bash
-exec java -XX:+UnlockExperimentalVMOptions -Djava.net.preferIPv4Stack=true -XX:+UseCGroupMemoryLimitForHeap -XshowSettings:vm -Djava.security.egd=file:/dev/./urandom -XX:+UseParallelGC -XX:MinHeapFreeRatio=10 -XX:MaxHeapFreeRatio=20 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -XX:+ExitOnOutOfMemoryError -Dbottegaio.backend.crt=/home/jboss/certs/client.crt -Dbottegaio.backend.key=/home/jboss/certs/client.key -Dbottegaio.backend.ca=/home/jboss/certs/rootCA.crt -Dbottegaio.backend.url=https://bottegaio-backend:8443 -jar /deployments/bottegaio.jar

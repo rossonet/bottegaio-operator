@@ -1,2 +1,0 @@
-#!/bin/bash
-exec java -XX:+UnlockExperimentalVMOptions -Djava.net.preferIPv4Stack=true -XX:+UseCGroupMemoryLimitForHeap -XshowSettings:vm -Djava.security.egd=file:/dev/./urandom -XX:+UseParallelGC -XX:MinHeapFreeRatio=10 -XX:MaxHeapFreeRatio=20 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -XX:+ExitOnOutOfMemoryError -Dserver.ssl.key-store=/home/jboss/keystore/keystore.jks -Dserver.ssl.trust-store=/home/jboss/keystore/truststore.jks -jar /deployments/bottegaio.jar
