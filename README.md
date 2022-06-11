@@ -15,7 +15,7 @@ Si tratta di un operator Kubernetes per la gestione del backend (con funzione au
 ### Installazione su Kubernetes
 
 ```
-kubectl apply -f https://raw.githubusercontent.com/rossonet/kettle-operator/main/kubernetes/operator.yaml
+kubectl apply -f https://raw.githubusercontent.com/rossonet/bottegaio-operator/main/kubernetes/operator.yaml
 ```
 
 ## Rossonet
